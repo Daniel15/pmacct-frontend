@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteBase /pmacct/
+
+RewriteRule ^(\d{4})/(\d{2})/(\d{2})/(.+)/$ day_host.php?year=$1&month=$2&day=$3&ip=$4
+RewriteRule ^(\d{4})/(\d{2})/(\d{2})/$ day.php?year=$1&month=$2&day=$3
+RewriteRule ^(\d{4})/(\d{2})/$ month.php?year=$1&month=$2
+RewriteRule ^(\d{4})/(\d{2})/byday.json$ month_by_day.php?year=$1&month=$2

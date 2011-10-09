@@ -1,0 +1,74 @@
+/**
+ * Styles for statistics pages
+ * @author Daniel15 <daniel at dan.cx>
+ */
+
+body
+{
+	font-family: Verdana, sans-serif;
+	font-size: small;
+	line-height: 1.6;
+	padding: 0 0.5em;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: 0;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+table
+{
+	border: 1px solid #AAA;
+}
+
+thead, tfoot
+{
+	background: #AAA;
+}
+
+td
+{
+	padding: 0 1em 0 0.5em;
+}
+
+tr
+{
+
+}
+
+tr:nth-child(even)
+{
+	background: #DDD;
+}
+
+#summary
+{
+	float: left;
+}
+
+#pie
+{
+	height: 400px;
+	border: 1px solid #EEE;
+	float: left;
+	width: 500px;
+	margin-left: 1em;
+}
+
+#byday
+{
+	height: 400px;
+	border: 1px solid #EEE;
+	width: 90%;
+	margin-left: 1em;
+}
