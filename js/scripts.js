@@ -176,6 +176,80 @@ Summary.Month =
 	}
 }
 
+var Host = {};
+Host.Day = 
+{
+	graph: null,
+	
+	init: function()
+	{
+		var categories = [];
+		var series = [];
+		
+		// Grab data from table
+		$('#host tbody tr').each(function(index, el)
+		{
+			categories.push($(this.cells[0]).text().split('-')[0]);
+			series.push(+$(this).attr('data-total'));
+		});
+		
+		categories = categories.reverse();
+		series = series.reverse();
+		
+		// Create pie chart
+		this.graph = new Highcharts.Chart(
+		{
+			chart: 
+			{
+				renderTo: 'host_graph',
+				defaultSeriesType: 'column'
+			},
+			title: 
+			{
+				text: ''
+			},
+			xAxis:
+			{
+				categories: categories,
+				labels:
+				{
+					//rotation: -45
+				}
+			},
+			yAxis:
+			{
+				title:
+				{
+					text: 'Traffic'
+				}
+			},
+			legend:
+			{
+				enabled: false
+			},
+			tooltip: 
+			{
+				enabled: false
+			},
+			plotOptions: 
+			{
+				pie: 
+				{
+					dataLabels: 
+					{
+						enabled: false
+					},
+					showInLegend: true
+				}
+			},
+			series: [
+			{
+				data: series
+			}]
+		});
+	}
+};
+
 // Call correct init based on what page we're on.
 switch (document.body.id)
 {
@@ -185,5 +259,8 @@ switch (document.body.id)
 		break;
 	case 'summary-day': 
 		Summary.init();
+		break;
+	case 'host-day':
+		Host.Day.init();
 		break;
 }

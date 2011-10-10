@@ -51,6 +51,11 @@ tr:nth-child(even)
 	background: #DDD;
 }
 
+#summary_container
+{
+	overflow: hidden;
+}
+
 #summary
 {
 	float: left;
@@ -65,10 +70,15 @@ tr:nth-child(even)
 	margin-left: 1em;
 }
 
-#byday
+#byday, #host_graph
 {
 	height: 400px;
 	border: 1px solid #EEE;
 	width: 90%;
-	margin-left: 1em;
+	margin: 1em 0 0 1em;
+}
+
+#host_graph
+{
+	height: 250px;
 }
