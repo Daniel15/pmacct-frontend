@@ -62,7 +62,7 @@ class Data_Summary
 		while ($row = $query->fetchObject())
 		{
 			// Check if this IP is on the list of IPs that should be shown
-			if (!in_array($row->ip, Config::$include_ips))
+			if (!empty(Config::$include_ips) && !in_array($row->ip, Config::$include_ips))
 				continue;
 			
 			$row->bytes_total = $row->bytes_in + $row->bytes_out;
@@ -113,7 +113,7 @@ class Data_Summary
 		while ($row = $query->fetchObject())
 		{
 			// Check if this IP is on the list of IPs that should be shown
-			if (!in_array($row->ip, Config::$include_ips))
+			if (!empty(Config::$include_ips) && !in_array($row->ip, Config::$include_ips))
 				continue;
 				
 			// Does this host have a data entry yet?
