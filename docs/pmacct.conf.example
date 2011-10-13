@@ -1,0 +1,27 @@
+! pmacctd configuration
+daemonize: true
+pidfile: /var/run/pmacctd.pid
+syslog: daemon
+
+interface: eth0
+aggregate[inbound]: dst_host
+aggregate[outbound]: src_host
+aggregate_filter[inbound]: dst net 66.232.109.0/24
+aggregate_filter[outbound]: src net 66.232.109.0/24
+plugins: mysql[inbound], mysql[outbound]
+sql_table[inbound]: acct_v7_in
+sql_table[outbound]: acct_v7_out
+
+! storage methods
+sql_host: localhost
+sql_user: pmacct
+sql_db: pmacct
+sql_passwd: password
+sql_refresh_time: 300
+sql_table_version: 7
+! accumulate values in each row for up to an hour
+sql_history: 1h
+sql_history_roundoff: h
+! in case of emergency, log to this file
+sql_recovery_logfile: /var/lib/pmacct/recovery_log
+
