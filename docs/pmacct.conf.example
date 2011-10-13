@@ -6,8 +6,8 @@ syslog: daemon
 interface: eth0
 aggregate[inbound]: dst_host
 aggregate[outbound]: src_host
-aggregate_filter[inbound]: dst net 66.232.109.0/24
-aggregate_filter[outbound]: src net 66.232.109.0/24
+aggregate_filter[inbound]: dst net 10.0.0.0/8
+aggregate_filter[outbound]: src net 10.0.0.0/8
 plugins: mysql[inbound], mysql[outbound]
 sql_table[inbound]: acct_v7_in
 sql_table[outbound]: acct_v7_out

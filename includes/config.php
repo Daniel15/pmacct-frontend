@@ -5,7 +5,7 @@ class Config
 {
 	static $database = array(
 		'host' => 'localhost',
-		'name' => 'ninja_pmacct',
+		'name' => 'pmacct',
 		'username' => 'root',
 		'password' => 'password',
 		'prefix' => 'acct_v7_',
@@ -14,9 +14,8 @@ class Config
 	// IPs to include in the statistics
 	// Set this to a blank array to show all IPs
 	static $include_ips = array(
-		'66.232.109.156', '66.232.109.157', '66.232.109.158', '66.232.109.159', '66.232.109.160', 
-		'66.232.109.161', '66.232.109.162', '66.232.109.163', '66.232.109.164', '66.232.109.165',
-		'66.232.109.166', '66.232.109.167'
+		// Only show 10.0.0.1 and 10.0.0.2
+		// '10.0.0.1', '10.0.0.2'
 	);
 }
 ?>
